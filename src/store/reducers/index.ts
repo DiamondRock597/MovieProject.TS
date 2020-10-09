@@ -1,15 +1,18 @@
-import {Film} from '../models';
+import {Film as FilmModel} from '../../models/film';
+import {FilmsActions, Actions} from '../actions/types';
 
 export interface DataStore {
-  films: Array<Film>;
+  films: Array<FilmModel>;
 }
 
 const initialState: DataStore = {
   films: [],
 };
 
-export const data = (state: DataStore = initialState, action) => {
+export const filmsData = (state: DataStore = initialState, action: Actions) => {
   switch (action.type) {
+    case FilmsActions.GetData:
+      return {...state, films: action.payload};
     default:
       return state;
   }

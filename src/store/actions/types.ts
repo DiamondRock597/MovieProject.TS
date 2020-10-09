@@ -1,11 +1,13 @@
-import {Film} from '../models';
+import {Film as FilmModel} from '../../models/film';
 
 export enum FilmsActions {
-  GET_DATA = 'GET_DATA',
+  GetData = 'GET_DATA',
   ADD_FAV = 'ADD_FAV',
 }
 
 export interface getData {
-  type: FilmsActions.GET_DATA;
-  payload: {films: Array<Film>};
+  type: FilmsActions.GetData;
+  payload: Array<FilmModel>;
 }
+
+export type Actions = getData;

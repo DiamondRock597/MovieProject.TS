@@ -1,11 +1,11 @@
 import {createStore, combineReducers, applyMiddleware} from 'redux';
 import Thunk from 'redux-thunk';
 
-import {DataStore, data} from './reducers';
+import {DataStore, filmsData} from './reducers';
 
 export interface Store {
-  data: DataStore;
+  filmsData: DataStore;
 }
 
-const rootReducer = combineReducers({data});
+const rootReducer = combineReducers({filmsData});
 export const store = createStore(rootReducer, applyMiddleware(Thunk));
