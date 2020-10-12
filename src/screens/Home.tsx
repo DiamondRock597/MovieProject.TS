@@ -26,10 +26,10 @@ class HomeContainer extends React.Component<Props> {
           ListHeaderComponent={HeaderHome}
           data={films}
           contentContainerStyle={styles.imageBlock}
-          itemDimension={130}
+          itemDimension={125}
           spacing={10}
           keyExtractor={(item: Film): string => item.id.toString()}
-          renderItem={({item}: {item: Film}) => <CartFilm item={item} />}
+          renderItem={({item}: {item: Film}) => <CartFilm navigation={this.props.navigation} item={item} />}
           ListEmptyComponent={<ActivityIndicator style={styles.activeIndicator} size="large" color="#00ff00" />}
         />
       </SafeAreaView>
