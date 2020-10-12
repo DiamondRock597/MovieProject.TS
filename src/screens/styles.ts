@@ -35,6 +35,9 @@ export const styles = StyleSheet.create({
     fontWeight: '600',
     fontFamily: 'tahoma',
   },
+  icon: {
+    marginLeft: 15,
+  },
 
   name: {
     marginHorizontal: 30,

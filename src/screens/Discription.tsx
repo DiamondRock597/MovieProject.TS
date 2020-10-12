@@ -1,5 +1,5 @@
 import React from 'react';
-import {ScrollView, View, Dimensions, Text} from 'react-native';
+import {ScrollView, View, Dimensions, Text, ScaledSize} from 'react-native';
 import {RouteProp} from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import AutoHeightImage from 'react-native-auto-height-image';
@@ -7,16 +7,21 @@ import AutoHeightImage from 'react-native-auto-height-image';
 import {RootStackParamList} from '../navigation/Stack/RootStackParamList';
 import {RootScreens} from '../screens/screens';
 import {styles} from './styles';
+import {Film} from '../models/film';
 
-const {width} = Dimensions.get('window');
+const {width}: ScaledSize = Dimensions.get('window');
 
 interface Props {
   route: RouteProp<RootStackParamList, RootScreens.Discription>;
 }
 
+interface Params {
+  film: Film;
+}
+
 export const Discription: React.FC<Props> = (props) => {
-  const {film} = props.route.params;
-  const releaseData = new Date(film.releaseDate);
+  const {film}: Params = props.route.params;
+  const releaseData: Date = new Date(film.releaseDate);
   return (
     <ScrollView style={styles.scrollView}>
       <View style={styles.container}>
@@ -30,7 +35,7 @@ export const Discription: React.FC<Props> = (props) => {
           />
         </View>
         <View style={styles.textRatingBlock}>
-          <Icon name={'glass'} onPress={() => console.log(this)} size={30} color="yellow" />
+          <Icon name="star" size={30} color="yellow" />
           <Text style={styles.textRating}>
             <Text style={styles.headerTitle}>Score:</Text>
             {'\n'} {film.voteAverage}

@@ -9,8 +9,13 @@ import {styles} from './styles';
 import {CartFilm} from '../components/CartFilm';
 import {HeaderHome} from '../components/HeaderHome';
 
+import {StackNavigationProp} from '@react-navigation/stack';
+import {RootStackParamList} from '../navigation/Stack/RootStackParamList';
+import {RootScreens} from './screens';
+
 interface Props {
   films: Array<Film>;
+  navigation: StackNavigationProp<RootStackParamList, RootScreens.Home>;
   getFilms(): void;
 }
 
@@ -27,7 +32,7 @@ class HomeContainer extends React.Component<Props> {
           data={films}
           contentContainerStyle={styles.imageBlock}
           itemDimension={125}
-          spacing={10}
+          spacing={15}
           keyExtractor={(item: Film): string => item.id.toString()}
           renderItem={({item}: {item: Film}) => <CartFilm navigation={this.props.navigation} item={item} />}
           ListEmptyComponent={<ActivityIndicator style={styles.activeIndicator} size="large" color="#00ff00" />}
