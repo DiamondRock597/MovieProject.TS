@@ -1,11 +1,13 @@
 import React from 'react';
-import {Text, FlatList, SafeAreaView} from 'react-native';
+import {SafeAreaView, ActivityIndicator} from 'react-native';
 import {connect} from 'react-redux';
-
+import {FlatGrid} from 'react-native-super-grid';
 import {Store} from '../store/store';
 import {getFilms} from '../store/actions/actionCreate';
 import {Film} from '../models/film';
 import {styles} from './styles';
+import {CartFilm} from '../components/CartFilm';
+import {HeaderHome} from '../components/HeaderHome';
 
 interface Props {
   films: Array<Film>;
@@ -20,10 +22,15 @@ class HomeContainer extends React.Component<Props> {
     const films = this.props.films;
     return (
       <SafeAreaView>
-        <FlatList
+        <FlatGrid
+          ListHeaderComponent={HeaderHome}
           data={films}
+          contentContainerStyle={styles.imageBlock}
+          itemDimension={130}
+          spacing={10}
           keyExtractor={(item: Film): string => item.id.toString()}
-          renderItem={({item}: {item: Film}) => <Text>{item.id}</Text>}
+          renderItem={({item}: {item: Film}) => <CartFilm item={item} />}
+          ListEmptyComponent={<ActivityIndicator style={styles.activeIndicator} size="large" color="#00ff00" />}
         />
       </SafeAreaView>
     );
