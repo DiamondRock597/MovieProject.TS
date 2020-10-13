@@ -3,7 +3,7 @@ import {AnyAction} from 'redux';
 
 import {Film as FilmModel} from '../../models/film';
 import {Film as FilmDTO} from '../../dto/film';
-import {getData, FilmsActions} from '../actions/types';
+import {getData, FilmsActions, addFav} from '../actions/types';
 import {Store} from '../store';
 
 const getFilmAPI = (payload: Array<FilmModel>): getData => ({type: FilmsActions.GetData, payload});
@@ -16,3 +16,5 @@ export const getFilms = () => async (dispatch: ThunkDispatch<Store, null, AnyAct
     dispatch(getFilmAPI(payload));
   } catch (error) {}
 };
+
+export const addFavouriteFilm = (id: number): addFav => ({type: FilmsActions.AddFav, id});

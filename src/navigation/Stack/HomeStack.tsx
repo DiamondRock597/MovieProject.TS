@@ -5,6 +5,7 @@ import {RootScreens} from '../../screens/screens';
 import {Home} from '../../screens/Home';
 import {Discription} from '../../screens/Discription';
 import {MenuButton} from '../../components/MenuButton';
+
 const Stack = createStackNavigator();
 
 export const HomeStack = () => (
@@ -21,7 +22,9 @@ export const HomeStack = () => (
       headerTintColor: 'white',
     }}>
     <Stack.Screen
-      options={({navigation}) => ({headerLeft: () => <MenuButton handleOpen={() => navigation.openDrawer()} />})}
+      options={({navigation}) => ({
+        headerLeft: () => <MenuButton handleOpen={() => navigation.openDrawer()} />,
+      })}
       name={RootScreens.Home}
       component={Home}
     />

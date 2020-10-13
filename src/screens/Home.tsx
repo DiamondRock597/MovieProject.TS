@@ -2,14 +2,14 @@ import React from 'react';
 import {SafeAreaView, ActivityIndicator} from 'react-native';
 import {connect} from 'react-redux';
 import {FlatGrid} from 'react-native-super-grid';
+import {StackNavigationProp} from '@react-navigation/stack';
+
 import {Store} from '../store/store';
 import {getFilms} from '../store/actions/actionCreate';
 import {Film} from '../models/film';
 import {styles} from './styles';
 import {CartFilm} from '../components/CartFilm';
 import {HeaderHome} from '../components/HeaderHome';
-
-import {StackNavigationProp} from '@react-navigation/stack';
 import {RootStackParamList} from '../navigation/Stack/RootStackParamList';
 import {RootScreens} from './screens';
 

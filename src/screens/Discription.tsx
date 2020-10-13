@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {ScrollView, View, Dimensions, Text, ScaledSize} from 'react-native';
 import {RouteProp} from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -20,6 +20,7 @@ interface Params {
 }
 
 export const Discription: React.FC<Props> = (props) => {
+  const [favourite, setFavourite] = useState<boolean>(false);
   const {film}: Params = props.route.params;
   const releaseData: Date = new Date(film.releaseDate);
   return (
@@ -35,7 +36,7 @@ export const Discription: React.FC<Props> = (props) => {
           />
         </View>
         <View style={styles.textRatingBlock}>
-          <Icon name="star" size={30} color="yellow" />
+          <Icon name={favourite ? 'star' : 'star-o'} onPress={() => setFavourite(!favourite)} size={30} color="yellow" />
           <Text style={styles.textRating}>
             <Text style={styles.headerTitle}>Score:</Text>
             {'\n'} {film.voteAverage}
