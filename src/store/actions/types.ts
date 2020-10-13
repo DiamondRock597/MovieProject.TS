@@ -2,7 +2,8 @@ import {Film as FilmModel} from '../../models/film';
 
 export enum FilmsActions {
   GetData = 'GET_DATA',
-  ADD_FAV = 'ADD_FAV',
+  AddFav = 'ADD_FAV',
+  Error = 'ERROR',
 }
 
 export interface getData {
@@ -10,4 +11,14 @@ export interface getData {
   payload: Array<FilmModel>;
 }
 
-export type Actions = getData;
+export interface addFav {
+  type: FilmsActions.AddFav;
+  id: number;
+}
+
+export interface Error {
+  type: FilmsActions.Error;
+  error: string;
+}
+
+export type Actions = getData | addFav | Error;
