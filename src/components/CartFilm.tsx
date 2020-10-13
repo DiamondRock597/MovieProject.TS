@@ -12,17 +12,17 @@ const {width}: ScaledSize = Dimensions.get('window');
 
 interface Props {
   item: Film;
-  navigation: StackNavigationProp<RootStackParamList, RootScreens.Home>;
+  navigation: StackNavigationProp<RootStackParamList, RootScreens.Home | RootScreens.Favourite>;
 }
 
 const paddingAll: number = 42;
-const coefOfScreen: number = 2;
+const countOfElemOnScreen: number = 2;
 
 export const CartFilm: React.FC<Props> = ({item, navigation}: Props) => (
   <TouchableOpacity onPress={() => navigation.navigate(RootScreens.Discription, {film: item})}>
     <AutoHeightImage
       style={styles.imageCart}
-      width={(width - paddingAll) / coefOfScreen}
+      width={(width - paddingAll) / countOfElemOnScreen}
       source={{uri: `http://image.tmdb.org/t/p/w342${item.path}`}}
     />
   </TouchableOpacity>

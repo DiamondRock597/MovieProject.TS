@@ -5,18 +5,20 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   imageBlock: {
-    alignItems: 'center',
-    paddingVertical: 5,
+    alignItems: 'flex-start',
+    paddingVertical: 10,
   },
   imageCart: {
     borderRadius: 25,
     paddingVertical: 15,
   },
   headerHome: {
-    paddingVertical: 20,
+    paddingHorizontal: 20,
+    paddingVertical: 5,
     fontSize: 20,
     color: 'black',
     opacity: 0.8,
+    marginBottom: 15,
   },
   container: {
     flexDirection: 'row',

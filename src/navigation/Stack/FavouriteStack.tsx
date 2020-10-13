@@ -4,6 +4,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import {RootScreens} from '../../screens/screens';
 import {Favourite} from '../../screens/Favourite';
 import {MenuButton} from '../../components/MenuButton';
+import {Discription} from '../../screens/Discription';
 const Stack = createStackNavigator();
 
 export const FavouriteStack = () => (
@@ -26,6 +27,6 @@ export const FavouriteStack = () => (
       name={RootScreens.Favourite}
       component={Favourite}
     />
-    <Stack.Screen name={RootScreens.Discription} component={Favourite} />
+    <Stack.Screen name={RootScreens.Discription} component={Discription} />
   </Stack.Navigator>
 );

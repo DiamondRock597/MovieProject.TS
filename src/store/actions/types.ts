@@ -3,6 +3,7 @@ import {Film as FilmModel} from '../../models/film';
 export enum FilmsActions {
   GetData = 'GET_DATA',
   AddFav = 'ADD_FAV',
+  Error = 'ERROR',
 }
 
 export interface getData {
@@ -15,4 +16,9 @@ export interface addFav {
   id: number;
 }
 
-export type Actions = getData | addFav;
+export interface Error {
+  type: FilmsActions.Error;
+  error: string;
+}
+
+export type Actions = getData | addFav | Error;
