@@ -3,8 +3,8 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import {Provider} from 'react-redux';
 
-import {HomeStack} from './src/navigation/Stack/HomeStack';
-import {FavouriteStack} from './src/navigation/Stack/FavouriteStack';
+import {HomeStack} from './src/navigation/stack/HomeStack';
+import {FavouriteStack} from './src/navigation/stack/FavouriteStack';
 import {RootScreens} from './src/screens/screens';
 import {store} from './src/store/store';
 

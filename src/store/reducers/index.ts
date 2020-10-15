@@ -28,7 +28,7 @@ export const filmsData = (state: FilmData = initialState, action: Actions) => {
         films: newFilms,
       };
     case FilmsActions.Error:
-      return {...state, error: action.error};
+      return {...state, films: [], error: action.error};
     default:
       return state;
   }

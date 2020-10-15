@@ -6,7 +6,7 @@ import AutoHeightImage from 'react-native-auto-height-image';
 import {StackNavigationProp} from '@react-navigation/stack';
 import {connect} from 'react-redux';
 
-import {RootStackParamList} from '../navigation/Stack/RootStackParamList';
+import {RootStackParamList} from '../navigation/stack/RootStackParamList';
 import {RootScreens} from '../screens/screens';
 import {styles} from './styles';
 import {Film} from '../models/film';
