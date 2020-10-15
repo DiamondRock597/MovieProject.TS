@@ -8,7 +8,7 @@ import {CartFilm} from '../components/CartFilm';
 import {Store} from '../store/store';
 import {Film} from '../models/film';
 import {styles} from './styles';
-import {RootStackParamList} from '../navigation/Stack/RootStackParamList';
+import {RootStackParamList} from '../navigation/stack/RootStackParamList';
 import {RootScreens} from './screens';
 
 interface Props {

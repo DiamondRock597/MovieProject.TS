@@ -5,7 +5,7 @@ import {StackNavigationProp} from '@react-navigation/stack';
 
 import {Film} from '../models/film';
 import {styles} from '../screens/styles';
-import {RootStackParamList} from '../navigation/Stack/RootStackParamList';
+import {RootStackParamList} from '../navigation/stack/RootStackParamList';
 import {RootScreens} from '../screens/screens';
 
 const {width}: ScaledSize = Dimensions.get('window');

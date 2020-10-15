@@ -2,12 +2,18 @@ import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 
 import {RootScreens} from '../../screens/screens';
-import {Favourite} from '../../screens/Favourite';
-import {MenuButton} from '../../components/MenuButton';
+import {Home} from '../../screens/Home';
 import {Discription} from '../../screens/Discription';
+import {MenuButton} from '../../components/MenuButton';
+import {DrawerNavigationProp} from '@react-navigation/drawer';
+import {RootStackParamList} from './RootStackParamList';
+
 const Stack = createStackNavigator();
 
-export const FavouriteStack = () => (
+interface OptionArgs {
+  navigation: DrawerNavigationProp<RootStackParamList, RootScreens.Favourite>;
+}
+export const HomeStack = () => (
   <Stack.Navigator
     screenOptions={{
       headerTitleAlign: 'center',
@@ -21,11 +27,11 @@ export const FavouriteStack = () => (
       headerTintColor: 'white',
     }}>
     <Stack.Screen
-      options={({navigation}) => ({
+      options={({navigation}: OptionArgs) => ({
         headerLeft: () => <MenuButton handleOpen={() => navigation.openDrawer()} />,
       })}
-      name={RootScreens.Favourite}
-      component={Favourite}
+      name={RootScreens.Home}
+      component={Home}
     />
     <Stack.Screen name={RootScreens.Discription} component={Discription} />
   </Stack.Navigator>

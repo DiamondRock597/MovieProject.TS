@@ -10,7 +10,7 @@ import {Film} from '../models/film';
 import {styles} from './styles';
 import {CartFilm} from '../components/CartFilm';
 import {HeaderHome} from '../components/HeaderHome';
-import {RootStackParamList} from '../navigation/Stack/RootStackParamList';
+import {RootStackParamList} from '../navigation/stack/RootStackParamList';
 import {RootScreens} from './screens';
 
 interface Props {
@@ -27,6 +27,7 @@ class HomeContainer extends React.Component<Props> {
   public render() {
     const {films}: Props = this.props;
     const {error}: Props = this.props;
+
     return (
       <SafeAreaView>
         {error ? (
