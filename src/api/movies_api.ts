@@ -11,6 +11,7 @@ export class MovieAPI {
     const API: string = 'api.themoviedb.org/3/movie/now_playing?';
     const APIkey: string = 'api_key=ebea8cfca72fdff8d2624ad7bbf78e4c';
     const res = await fetch(`http://${API}${APIkey}`);
+
     const data: {results: Array<FilmDTO>} = await res.json();
     const payload: Array<FilmModel> = data.results.map((item: FilmDTO) => FilmModel.parse(item));
     dispatch(getFilmAPI(payload));
