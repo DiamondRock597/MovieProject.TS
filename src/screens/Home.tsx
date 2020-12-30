@@ -36,6 +36,7 @@ class HomeContainer extends React.Component<Props> {
           <FlatGrid
             ListHeaderComponent={HeaderHome}
             data={films}
+            getItem={undefined}
             contentContainerStyle={styles.imageBlock}
             itemDimension={125}
             spacing={15}
